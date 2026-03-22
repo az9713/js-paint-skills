@@ -4,7 +4,7 @@ Claude Code learns to draw in [JS Paint](https://jspaint.app/) using browser aut
 
 ## Demo
 
-https://github.com/user-attachments/assets/PLACEHOLDER-PENCIL-PORTRAIT-DEMO-MP4
+https://github.com/user-attachments/assets/547225ca-30ad-489d-8ac6-2565589fff7e
 
 ## What This Is
 
