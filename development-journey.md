@@ -1,20 +1,14 @@
 # Development Journey: From Transcript to Paintings
 
-## How Claude Code Reverse-Engineered Kris' JS Paint Experiments
+## How Claude Code Reverse-Engineered the JS Paint Experiments
 
 ---
 
 ## Phase 1: Understanding the Source Material
 
-### What I started with
-
-Two files in `docs/`:
-- `README.txt` - Kris' shorthand notes about the experiments
-- `transcript.txt` - Full YouTube transcript of the video
-
 ### Key insights extracted
 
-From the transcript, I identified:
+From the video, I identified:
 
 1. **The philosophy**: Inspired by Mo's talk about evolution/natural selection as a metaphor for software development. The core idea: give an LLM a goal, tools, and automated test criteria, then let it iterate.
 
@@ -27,12 +21,12 @@ From the transcript, I identified:
    - Fourth: Dog playing in snow (oil painting technique).
    - Fifth: Pencil portrait of a female (pencil/charcoal technique).
 
-4. **The skills Kris developed** (mentioned but never shown in detail):
+4. **The skills developed in the video** (mentioned but never shown in detail):
    - `draw-on-jspaint` - base drawing capability
    - Oil painting technique (brush strokes)
    - Pencil/charcoal portrait technique (Technique 4)
 
-5. **What I did NOT have**: Kris' actual skill files, his images (`fisherman.png`, `aiagent2.png`), or his specific CDP scripts. I had to reverse-engineer everything from descriptions and the transcript.
+5. **What I did NOT have**: The actual skill files, reference images (`fisherman.png`, `aiagent2.png`), or specific CDP scripts. I had to reverse-engineer everything from descriptions in the video.
 
 ---
 
@@ -40,11 +34,11 @@ From the transcript, I identified:
 
 ### How I decided what to put in each skill
 
-I had to infer the skill contents from Kris' behavior described in the transcript. Here's my reasoning:
+I had to infer the skill contents from the behavior described in the video. Here's my reasoning:
 
 **`draw-on-jspaint.md` (base skill)**
 
-The transcript says: "build a drawing script that uses CDP directly to draw on the JS Paint Canvas." This told me the skill needed to:
+The video mentions: "build a drawing script that uses CDP directly to draw on the JS Paint Canvas." This told me the skill needed to:
 - Know how to navigate to jspaint.app
 - Know the canvas element selector (`.main-canvas`)
 - Know how to dispatch mouse/pointer events to simulate drawing
@@ -54,7 +48,7 @@ I designed it around `PointerEvent` dispatch because JS Paint is a modern web ap
 
 **`oil-painting-technique.md`**
 
-The transcript describes: "I learned it to kind of paint one and one brush stroke" and shows layered painting (background first, then subject, then details). I structured the skill around:
+The video describes painting "one and one brush stroke" with layered painting (background first, then subject, then details). I structured the skill around:
 - Layer-based composition (background -> midground -> foreground -> details)
 - Brush stroke patterns (horizontal sweeps, vertical dabs, circular motions)
 - Color palettes for specific scenes (warm summer night, winter snow)
@@ -62,7 +56,7 @@ The transcript describes: "I learned it to kind of paint one and one brush strok
 
 **`pencil-portrait-technique.md`**
 
-Kris mentions "Technique 4 (Pencil + Charcoal portrait)" and describes "more detailed painting" with good face/eyes. I built this around:
+The video mentions "Technique 4 (Pencil + Charcoal portrait)" and describes "more detailed painting" with good face/eyes. I built this around:
 - Face proportion guidelines (eye line at midpoint, nose 2/3 down, etc.)
 - Thin pencil strokes (1-2px lines)
 - Cross-hatching for shading
@@ -71,13 +65,13 @@ Kris mentions "Technique 4 (Pencil + Charcoal portrait)" and describes "more det
 
 **`compare-drawing.md`**
 
-From the transcript: "Use screenshot and compare to the truth at all times" and "Let's build a comparison tool to measure similarities." This skill codifies the iteration loop: draw, screenshot, evaluate, fix, repeat.
+From the video: "Use screenshot and compare to the truth at all times" and "Let's build a comparison tool to measure similarities." This skill codifies the iteration loop: draw, screenshot, evaluate, fix, repeat.
 
 ### What I intentionally left out
 
 - No hardcoded coordinates - JS Paint's layout can vary
 - No specific image-copying logic (since we didn't have the reference images)
-- No automated pixel-comparison code - keeping it visual/manual like Kris' first experiments
+- No automated pixel-comparison code - keeping it visual/manual like the first experiments in the video
 
 ---
 
@@ -170,7 +164,7 @@ Finding how to set colors was its own adventure:
 - Offset the front-right leg (raised) to suggest motion
 - Used `#D0D8E0` for paw prints (subtle, not jarring)
 
-**Kris' benchmark**: He said "at least he got four legs and a tail... that's a retriever, right?" - my version hits these criteria.
+**Benchmark from the video**: "at least he got four legs and a tail... that's a retriever, right?" — my version hits these criteria.
 
 ### Experiment 3: Pencil portrait of female
 
@@ -202,7 +196,7 @@ Finding how to set colors was its own adventure:
 
 ### How I evaluated each painting
 
-I did NOT use automated pixel-comparison (like Kris did at 78.1%/95%). Instead, I used visual evaluation via screenshots at key milestones:
+I did NOT use automated pixel-comparison (like was done in the video at 78.1%/95%). Instead, I used visual evaluation via screenshots at key milestones:
 
 **Checkpoint 1 - After background**: Is the color palette right? Is the mood set?
 - Experiment 1: Purple-to-orange gradient looked atmospheric. Passed.
@@ -460,7 +454,7 @@ All three paintings were re-executed using the native `_native` helper, drawing 
 
 ## What This Demonstrates
 
-Kris' original insight from Mo's talk: complexity emerges from iteration against test criteria.
+The original insight from the video, inspired by Mo's talk: complexity emerges from iteration against test criteria.
 
 In this reverse-engineering:
 - **The goal** was clear: produce 3 specific paintings in JS Paint
@@ -473,7 +467,7 @@ In this reverse-engineering:
 
 The third level is the most instructive. I initially misdiagnosed the problem (blamed event dispatch, actual cause was wrong tool selection), took a shortcut (direct canvas), and only discovered the truth when forced to investigate properly. The root cause was two lines of code. The shortcut produced working paintings but missed the point of the exercise — learning to work *with* JS Paint, not around it.
 
-The skills serve as **accumulated knowledge** — they encode what worked (techniques, color palettes, composition patterns) so future sessions don't start from zero. The dual-mode architecture preserves both approaches: canvas mode for maximum control, native mode for authentic JS Paint integration. This is exactly the "evolution" pattern Kris was exploring: try things, keep what works, learn from what doesn't, build on it.
+The skills serve as **accumulated knowledge** — they encode what worked (techniques, color palettes, composition patterns) so future sessions don't start from zero. The dual-mode architecture preserves both approaches: canvas mode for maximum control, native mode for authentic JS Paint integration. This is exactly the "evolution" pattern explored in the video: try things, keep what works, learn from what doesn't, build on it.
 
 ### Final file inventory
 
@@ -485,10 +479,7 @@ The skills serve as **accumulated knowledge** — they encode what worked (techn
   compare-drawing.md          — Screenshot evaluation and iteration criteria
 
 docs/
-  README.txt                  — Original project notes
-  transcript.txt              — YouTube video transcript
   development-journey.md      — This document
-  session-transcript.html     — Full session transcript (HTML export)
   plans/
     2026-03-22-jspaint-drawing-skills.md — Implementation plan
 ```

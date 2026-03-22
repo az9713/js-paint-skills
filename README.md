@@ -44,7 +44,7 @@ The full story of how this was built — including a root cause analysis of a de
 
 **Key moments:**
 
-1. **Transcript analysis** — Extracted skill structure, technique descriptions, and tool requirements from a YouTube video transcript.
+1. **Video analysis** — Extracted skill structure, technique descriptions, and tool requirements from the video.
 2. **Canvas mode paintings** — First working approach. Drew directly on the `<canvas>` element, bypassing JS Paint's tools.
 3. **Root cause analysis** — Investigated why pointer events produced thin 1px lines. Found the cause: JS Paint defaults to the Pencil tool (1px), not the Brush. The fix was two lines of code.
 4. **Native mode paintings** — Re-executed all 3 paintings through JS Paint's actual Brush/Pencil tools with full undo support.

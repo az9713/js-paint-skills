@@ -1,8 +1,8 @@
-# JS Paint Drawing Skills - Reverse Engineering Kris' Experiments
+# JS Paint Drawing Skills - Reverse Engineering the Video Experiments
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Reverse-engineer the drawing skills from Kris' AllAboutAI video and replicate the JS Paint experiments using Claude Code + Chrome browser automation.
+**Goal:** Reverse-engineer the drawing skills from the AllAboutAI video and replicate the JS Paint experiments using Claude Code + Chrome browser automation.
 
 **Architecture:** Create 4 Claude Code skills in `.claude/skills/` that teach Claude how to draw on jspaint.app using JavaScript mouse event dispatch. A base skill handles canvas interaction, while technique skills (oil painting, pencil portrait, comparison) layer on top. Then execute the 3 painting experiments from the video.
 
