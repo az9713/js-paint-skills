@@ -10,7 +10,7 @@
 
 From the video, I identified:
 
-1. **The philosophy**: Inspired by Mo's talk about evolution/natural selection as a metaphor for software development. The core idea: give an LLM a goal, tools, and automated test criteria, then let it iterate.
+1. **The philosophy**: Inspired by the concept of evolution/natural selection as a metaphor for software development. The core idea: give an LLM a goal, tools, and automated test criteria, then let it iterate.
 
 2. **The tools used**: Claude Code + Chrome browser automation (CDP - Chrome DevTools Protocol) + screenshots for comparison.
 
@@ -454,7 +454,7 @@ All three paintings were re-executed using the native `_native` helper, drawing 
 
 ## What This Demonstrates
 
-The original insight from the video, inspired by Mo's talk: complexity emerges from iteration against test criteria.
+The original insight from the video: complexity emerges from iteration against test criteria.
 
 In this reverse-engineering:
 - **The goal** was clear: produce 3 specific paintings in JS Paint

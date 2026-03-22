@@ -67,4 +67,4 @@ This project was inspired by the YouTube video **"Can Claude Code Learn To Draw 
 
 [https://www.youtube.com/watch?v=pEQvElSxKOk](https://www.youtube.com/watch?v=pEQvElSxKOk)
 
-The video demonstrates Claude Code iteratively learning to draw in JS Paint using browser automation and skills — an exploration of the "evolution style" approach to AI capabilities inspired by [Mo](https://www.youtube.com/@mo_statechange)'s talk on natural selection as a metaphor for software development.
+The video demonstrates Claude Code iteratively learning to draw in JS Paint using browser automation and skills — an exploration of the "evolution style" approach to AI capabilities, using natural selection as a metaphor for software development.

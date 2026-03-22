@@ -7,7 +7,7 @@ description: Take screenshots to evaluate drawing progress and iterate on improv
 
 ## Purpose
 
-This skill guides the iterative improvement loop: draw, screenshot, evaluate, fix, repeat. It's the "automated test criteria" referenced in the video, inspired by Mo's evolution analogy.
+This skill guides the iterative improvement loop: draw, screenshot, evaluate, fix, repeat. It's the "automated test criteria" referenced in the video, inspired by the evolution/natural selection analogy for software development.
 
 ## Workflow
 
